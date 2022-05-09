@@ -1,0 +1,9 @@
+{
+    "name": "octobro/oc-metabase-plugin",
+    "type": "october-plugin",
+    "description": "Simple Framing Your Data using Metabase Analytics",
+    "require": {
+        "composer/installers": "~1.0",
+        "ipeevski/metabase-php": "0.2.9"
+    }
+}

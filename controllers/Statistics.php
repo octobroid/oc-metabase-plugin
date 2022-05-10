@@ -25,8 +25,8 @@ class Statistics extends Controller
         
         $metabaseUrl         = config('metabase.url');
         $metabaseKey         = config('metabase.key');
-        $metabaseDashboardId = config('metabase.dashboard_id', 1);
-        $metabaseParams      = config('metabase.params', ['date' => 'past26weeks']);
+        $metabaseDashboardId = config('metabase.dashboard_id');
+        $metabaseParams      = config('metabase.params');
 
         $metabase = new MetabaseEmbed($metabaseUrl, $metabaseKey);
         echo $metabase->dashboardIframe($metabaseDashboardId, $metabaseParams);

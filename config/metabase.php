@@ -23,5 +23,5 @@ return [
     /*
      * The id of the dashboard (from the url)
      **/
-    'dashboard_id' => env('METABASE_DASHBOARD_ID')
+    'dashboard_id' => (int) env('METABASE_DASHBOARD_ID')
 ];

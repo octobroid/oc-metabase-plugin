@@ -9,7 +9,7 @@ function translate_key_value_metabase_param($value) {
 }
 
 /*
- * You can set param on ENV within format METABASE_PARAMS=date=past26weeks,greater_than_or_equal_to=10
+ * You can set param on ENV within format METABASE_PARAMS="date=past26weeks,greater_than_or_equal_to=10"
  **/
 $metabase_params = array_map('translate_key_value_metabase_param', array_filter(explode(',', env('METABASE_PARAMS'))));
 

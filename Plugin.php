@@ -50,12 +50,27 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'octobro.metabase.some_permission' => [
+            'octobro.metabase.menu' => [
                 'tab' => 'Metabase',
-                'label' => 'Some permission'
+                'label' => 'Allow Access to see Metabase Menu'
+            ],
+            'octobro.metabase.widgets.dashboard' => [
+                'tab' => 'Metabase',
+                'label' => 'Allow Access to see Metabase Widget on Dashboard Menu'
+            ],
+        ];
+    }
+
+    public function registerReportWidgets()
+    {
+        return [
+            \Octobro\Metabase\ReportWidgets\Metabase::class => [
+                'label' => 'Metabase',
+                'context' => 'dashboard',
+                'permissions' => [
+                    'octobro.metabase.widgets.dashboard',
+                ],
             ],
         ];
     }
@@ -72,7 +87,7 @@ class Plugin extends PluginBase
                 'label'       => 'Metabase',
                 'url'         => Backend::url('octobro/metabase/statistics'),
                 'icon'        => 'icon-bar-chart',
-                'permissions' => ['octobro.metabase.*'],
+                'permissions' => ['octobro.metabase.menu'],
                 'order'       => 490
             ],
         ];

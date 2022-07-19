@@ -37,3 +37,6 @@ return [
     'dashboard_id' => (int) env('METABASE_DASHBOARD_ID')
 ];
 **/
+
+// Comment this if already copied on your own config folder
+return [];
